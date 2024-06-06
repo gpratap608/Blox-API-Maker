@@ -1,5 +1,5 @@
 {
-  "name": "complete-backend",
+  "name": "blox-api",
   "version": "1.0.0",
   "description": "It is a complex and complete Backend Packege",
   "main": "index.js",
@@ -8,6 +8,7 @@
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": "./bin/cli.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gpratap608/complete-backend.git"
