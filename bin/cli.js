@@ -160,13 +160,9 @@ if(!publicCreated) process.exit(-1)
 const gitIgnoreCreated = runCommand(creategitignore)
 if(!gitIgnoreCreated) process.exit(-1)
 
-fs.writeFile(`./${repoName}/.gitignore`, dataGitIgnore, err => {
-    if (err) {
-      console.error(err);
-    } else {
-      // file written successfully
-    }
-  });
+const addgitignoreContent = `Add-Content -Path "${repoName}/.gitignore" -Value ${dataGitIgnore}`
+const gitIgnoreAdded = runCommand(addgitignoreContent)
+if(!gitIgnoreAdded) process.exit(-1)
 
 console.log(`Installing dependencies for ${repoName}`);
 const installedDeps = runCommand(installDepsCommand);
