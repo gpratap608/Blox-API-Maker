@@ -160,7 +160,7 @@ if(!publicCreated) process.exit(-1)
 const gitIgnoreCreated = runCommand(creategitignore)
 if(!gitIgnoreCreated) process.exit(-1)
 
-fs.writeFile('./.gitignore', dataGitIgnore, err => {
+fs.writeFile(`./${repoName}/.gitignore`, dataGitIgnore, err => {
     if (err) {
       console.error(err);
     } else {
