@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import {execSync} from "child_process"
-import writeinGitIgnore from "./writeInGitIgnore";
+import writeinGitIgnore from "./writeInGitIgnore.js";
 const runCommand =  command => {
     try {
         execSync(`${command}`,{studio:'inherit'})
