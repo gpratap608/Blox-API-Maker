@@ -1,6 +1,6 @@
 {
   "name": "@gpratap608/blox-api",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "It is a complex and complete Backend Packege",
   "main": "index.js",
   "type": "module",

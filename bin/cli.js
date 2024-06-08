@@ -13,6 +13,7 @@ const runCommand =  command => {
 }
 
 const repoName = process.argv[2];
+const makeApp = `mkdir ${repoName}`
 const createPublicFolder = `mkdir public`
 const creategitignore = `touch .gitignore` 
 const dataGitIgnore = `# Logs
@@ -147,7 +148,8 @@ dist
 .pnp.*
 
 `
-
+const appCreated = runCommand(makeApp);
+if(!appCreated) process.exit(-1)
 const installDepsCommand = `cd ${repoName} && npm install`
 
 const publicCreated = runCommand(createPublicFolder);
