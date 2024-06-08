@@ -14,7 +14,7 @@ const runCommand =  command => {
 
 const repoName = process.argv[2];
 const createPublicFolder = `mkdir public`
-const creategitignore = `New-Item -Path "./.gitignore" -ItemType "file"`
+const creategitignore = `touch .gitignore` 
 const dataGitIgnore = `# Logs
 logs
 *.log
