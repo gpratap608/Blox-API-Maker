@@ -164,9 +164,9 @@ const addgitignoreContent = `echo ${dataGitIgnore} >> ${repoName}/.gitignore`
 const gitIgnoreAdded = runCommand(addgitignoreContent)
 if(!gitIgnoreAdded) process.exit(-1)
 
-console.log(`Installing dependencies for ${repoName}`);
-const installedDeps = runCommand(installDepsCommand);
-if(!installedDeps) process.exit(-1)
+// console.log(`Installing dependencies for ${repoName}`);
+// const installedDeps = runCommand(installDepsCommand);
+// if(!installedDeps) process.exit(-1)
 
 console.log("Congratulations! You are Ready to create Servers");
 console.log("Write the Following Commands");
