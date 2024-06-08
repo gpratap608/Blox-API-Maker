@@ -17,7 +17,19 @@ const makeApp = `mkdir ${repoName}`
 const changeToApp = `cd ${repoName}`
 const createPublicFolder = `cd ${repoName} && mkdir public`
 const creategitignore = `cd ${repoName} && touch .gitignore` 
-const dataGitIgnore = `# Logs
+
+const appCreated = runCommand(makeApp);
+if(!appCreated) process.exit(-1)
+const appPathChange = runCommand(changeToApp)
+if(!appPathChange) process.exit(-1)
+// const installDepsCommand = `cd ${repoName} && npm install`
+
+const publicCreated = runCommand(createPublicFolder);
+if(!publicCreated) process.exit(-1)
+const gitIgnoreCreated = runCommand(creategitignore)
+if(!gitIgnoreCreated) process.exit(-1)
+
+const addgitignoreContent = `echo # Logs
 logs
 *.log
 npm-debug.log*
@@ -146,21 +158,7 @@ dist
 .yarn/unplugged
 .yarn/build-state.yml
 .yarn/install-state.gz
-.pnp.*
-
-`
-const appCreated = runCommand(makeApp);
-if(!appCreated) process.exit(-1)
-const appPathChange = runCommand(changeToApp)
-if(!appPathChange) process.exit(-1)
-// const installDepsCommand = `cd ${repoName} && npm install`
-
-const publicCreated = runCommand(createPublicFolder);
-if(!publicCreated) process.exit(-1)
-const gitIgnoreCreated = runCommand(creategitignore)
-if(!gitIgnoreCreated) process.exit(-1)
-
-const addgitignoreContent = `echo ${dataGitIgnore} >> ${repoName}/.gitignore`
+.pnp.* >> ${repoName}/.gitignore`
 const gitIgnoreAdded = runCommand(addgitignoreContent)
 if(!gitIgnoreAdded) process.exit(-1)
 
