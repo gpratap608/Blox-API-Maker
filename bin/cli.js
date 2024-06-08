@@ -160,7 +160,7 @@ if(!publicCreated) process.exit(-1)
 const gitIgnoreCreated = runCommand(creategitignore)
 if(!gitIgnoreCreated) process.exit(-1)
 
-const addgitignoreContent = `Add-Content -Path "${repoName}/.gitignore" -Value ${dataGitIgnore}`
+const addgitignoreContent = `echo ${dataGitIgnore} >> ${repoName}/.gitignore`
 const gitIgnoreAdded = runCommand(addgitignoreContent)
 if(!gitIgnoreAdded) process.exit(-1)
 
