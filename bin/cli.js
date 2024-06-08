@@ -15,8 +15,8 @@ const runCommand =  command => {
 const repoName = process.argv[2];
 const makeApp = `mkdir ${repoName}`
 const changeToApp = `cd ${repoName}`
-const createPublicFolder = `mkdir public`
-const creategitignore = `touch .gitignore` 
+const createPublicFolder = `cd ${repoName} \n mkdir public`
+const creategitignore = `cd ${repoName} \n touch .gitignore` 
 const dataGitIgnore = `# Logs
 logs
 *.log
