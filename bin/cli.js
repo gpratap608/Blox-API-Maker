@@ -14,8 +14,9 @@ const runCommand =  command => {
 
 const repoName = process.argv[2];
 const makeApp = `mkdir ${repoName}`
-const createPublicFolder = `mkdir ${repoName}/public`
-const creategitignore = `touch ${repoName}/.gitignore` 
+const changeToApp = `cd ${repoName}`
+const createPublicFolder = `mkdir public`
+const creategitignore = `touch .gitignore` 
 const dataGitIgnore = `# Logs
 logs
 *.log
@@ -150,7 +151,9 @@ dist
 `
 const appCreated = runCommand(makeApp);
 if(!appCreated) process.exit(-1)
-const installDepsCommand = `cd ${repoName} && npm install`
+const appPathChange = runCommand(changeToApp)
+if(!appPathChange) process.exit(-1)
+// const installDepsCommand = `cd ${repoName} && npm install`
 
 const publicCreated = runCommand(createPublicFolder);
 if(!publicCreated) process.exit(-1)
