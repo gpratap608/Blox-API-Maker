@@ -41,7 +41,7 @@ async function writeinPackage( repoName ) {
   }
 }
  `
-    await fs.writeFile(`${repoName}/.package.json`, content);
+    await fs.writeFile(`${repoName}/package.json`, content);
   } catch (err) {
     console.log(err);
   }
