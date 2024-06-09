@@ -26,7 +26,7 @@ const createPrettierrc = `cd ${repoName} && touch .prettierrc`
 const createpackage_lock = `cd ${repoName} && touch package-lock.json`
 const createPackage = `cd ${repoName} && touch package.json`
 const createREADME = `cd ${repoName} && touch README.md`
-const installDependency = `cd ${repoName} && npm install`
+// const installDependency = `cd ${repoName} && npm install`
 
 const appCreated = runCommand(makeApp);
 if(!appCreated) process.exit(-1)
@@ -54,8 +54,8 @@ writeinPackage(repoName)
 const readme = runCommand(createREADME)
 if(!readme) process.exit(-1)
 writeinReadme(repoName) 
-const depInstalled = runCommand(installDependency)
-if(!depInstalled) process.exit(-1)
+// const depInstalled = runCommand(installDependency)
+// if(!depInstalled) process.exit(-1)
 
 
 
