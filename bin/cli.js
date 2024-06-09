@@ -26,7 +26,6 @@ const createPrettierrc = `cd ${repoName} && touch .prettierrc`
 const createpackage_lock = `cd ${repoName} && touch package-lock.json`
 const createPackage = `cd ${repoName} && touch package.json`
 const createREADME = `cd ${repoName} && touch README.md`
-const installDependency = `cd ${repoName} && npm install`
 
 const appCreated = runCommand(makeApp);
 if(!appCreated) process.exit(-1)
@@ -54,10 +53,7 @@ writeinPackage(repoName)
 const readme = runCommand(createREADME)
 if(!readme) process.exit(-1)
 writeinReadme(repoName) 
-setTimeout(function(){
-    const depInstalled = runCommand(installDependency)
-    if(!depInstalled) process.exit(-1)
-},3000)
+
 
 
 
@@ -70,4 +66,9 @@ setTimeout(function(){
 
 console.log("Congratulations! You are Ready to create Servers");
 console.log("Write the Following Commands");
-console.log(`cd ${repoName} && npm run dev`);
+console.log(`cd ${repoName}`)
+console.log(`##################`)
+console.log(`npm install`)
+console.log(`##################`)
+console.log(`npm run dev`)
+    
