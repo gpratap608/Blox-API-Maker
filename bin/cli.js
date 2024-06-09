@@ -11,6 +11,13 @@ import writeinENV from "./writeInENV.js";
 import writeinconstant from "./writeInConstantJS.js";
 import writeinIndexJS from "./writeInIndexJS.js";
 import writeinUserRouter from "./writeInUserRouter.js";
+import writeinDBindex from "./writeInDBIndexJS.js";
+import writeinMulterMiddleware from "./writeInMulterMiddleware.js";
+import writeinUserModel from "./writeInUserModel.js";
+import writeinAPIerror from "./writeInAPIerror.js";
+import writeinapiResponse from "./writeInapiResponse.js";
+import writeinasyncHandler from "./writeinAsyncHandler.js";
+import writeinCloudinary from "./writeInCloudinary.js";
 const runCommand =  command => {
     try {
         execSync(`${command}`,{studio:'inherit'})
@@ -44,6 +51,22 @@ const createControllerJS = `cd ${repoName} && cd src && cd controllers && touch 
 
 const createRoutes = `cd ${repoName} && cd src && mkdir routes` 
 const createUserRoutesJS = `cd ${repoName} && cd src && cd routes && touch user.routes.js`
+
+const createDBfolder = `cd ${repoName} && cd src && mkdir db`
+const createDBindex = `cd ${repoName} && cd src && cd db && touch index.js`
+
+const createMiddlewareFolder = `cd ${repoName} && cd src && mkdir middlewares`
+const createMulterMiddleware = `cd ${repoName} && cd src && cd middlewares && touch multer.middleware.js`
+
+const createModels = `cd ${repoName} && cd src && mkdir models`
+const createUserModel = `cd ${repoName} && cd src && cd models && touch user.model.js`
+
+const createUtils = `cd ${repoName} && cd src && mkdir utils`
+const createAPIerror = `cd ${repoName} && cd src && cd utils && touch APIerror.js`
+const createAPIresponse = `cd ${repoName} && cd src && cd utils && touch APIresponse.js`
+const createAsyncHandler = `cd ${repoName} && cd src && cd utils && touch asyncHandler.js`
+const createCloudinary = `cd ${repoName} && cd src && cd utils && touch cloudinary.js`
+
 
 const appCreated = runCommand(makeApp);
 if(!appCreated) process.exit(-1)
@@ -94,13 +117,38 @@ if(!routesCreated) process.exit(-1)
 const userRoutesJSCreated = runCommand(createUserRoutesJS)
 if(!userRoutesJSCreated) process.exit(-1)
 writeinUserRouter(repoName)
+const DBfoldercreated = runCommand(createDBfolder)
+if(!DBfoldercreated) process.exit(-1)
+const DBIndexCreated = runCommand(createDBindex)
+if(!DBIndexCreated) process.exit(-1)
+writeinDBindex(repoName)
+const middleFolderCreated = runCommand(createMiddlewareFolder)
+if(!middleFolderCreated) process.exit(-1)
+const multerMiddlewareJSCreated = runCommand(createMulterMiddleware)
+if(!multerMiddlewareJSCreated) process.exit(-1)
+writeinMulterMiddleware(repoName)
+const modelsFolderCreated = runCommand(createModels)
+if(!modelsFolderCreated) process.exit(-1)
+const userModelCreated = runCommand(createUserModel)
+if(!userModelCreated) process.exit(-1)
+writeinUserModel(repoName)
+const utilsFolderCreated = runCommand(createUtils)
+if(!utilsFolderCreated) process.exit(-1)
+const apiErrorCreated = runCommand(createAPIerror)
+if(!apiErrorCreated) process.exit(-1)
+writeinAPIerror(repoName)
+const apiResponseCreated = runCommand(createAPIresponse)
+if(!apiResponseCreated) process.exit(-1)
+writeinapiResponse(repoName)
+const asyncHandlerCreated = runCommand(createAsyncHandler)
+if(!asyncHandlerCreated) process.exit(-1)
+writeinasyncHandler(repoName)
+const cloudinaryCreated = runCommand(createCloudinary)
+if(!cloudinaryCreated) process.exit(-1)
+writeinCloudinary(repoName)
 
 
 
-// const installDepsCommand = `cd ${repoName} && npm install`
-// console.log(`Installing dependencies for ${repoName}`);
-// const installedDeps = runCommand(installDepsCommand);
-// if(!installedDeps) process.exit(-1)
 
 console.log("Congratulations! You are Ready to create Servers");
 console.log("Write the Following Commands");
