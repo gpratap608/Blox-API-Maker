@@ -12,7 +12,7 @@ async function writeinPackage( repoName ) {
   "type": "module",
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
-    "test": "echo /"Error: no test specified/" && exit 1"
+    "test": "echo /'Error: no test specified/' && exit 1"
   },
   "bin": "./bin/cli.js",
   "repository": {
