@@ -12,7 +12,7 @@ async function writeinReadme( repoName ) {
 npx create-blox-api "Your Server Name"
 
  `
-    await fs.writeFile(`${repoName}/.prettierrc`, content);
+    await fs.writeFile(`${repoName}/README.md`, content);
   } catch (err) {
     console.log(err);
   }
