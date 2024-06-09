@@ -54,8 +54,12 @@ writeinPackage(repoName)
 const readme = runCommand(createREADME)
 if(!readme) process.exit(-1)
 writeinReadme(repoName) 
-const depInstalled = runCommand(installDependency)
-if(!depInstalled) process.exit(-1)
+setTimeout(function(){
+    const depInstalled = runCommand(installDependency)
+    if(!depInstalled) process.exit(-1)
+},3000)
+
+
 
 
 
