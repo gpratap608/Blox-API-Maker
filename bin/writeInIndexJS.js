@@ -19,7 +19,7 @@ connectDB()
     app.listen(process.env.PORT||8080,()=>{
       console.log({
         serverStatus:"🌐  Application is Running", 
-        URL:``🔗 http://localhost:${process.env.PORT}``
+        URL:"http://localhost:8080"
       });
     })
   })
