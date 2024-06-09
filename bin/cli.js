@@ -152,19 +152,19 @@ writeinCloudinary(repoName)
 
 console.log("Congratulations! You are Ready to create Servers");
 console.log("Write the Following Commands");
-console.log("\n");
+console.log("---------------");
 console.log(`cd ${repoName}`)
-console.log("\n");
+console.log("---------------");
 console.log(`npm install`)
-console.log("\n");
+console.log("---------------");
 console.log("Add MongoDB VScode URI from MongoDBAtlas in the env file")
-console.log("\n");
+console.log("---------------");
 console.log("Add ACCESS and REFRESH Tokens in the ENV file");
-console.log("\n");
+console.log("---------------");
 console.log("Configure your Account on https://cloudinary.com/")
 console.log("Add cloud name, api key, api secret from cloudinary to the env file");
-console.log("\n");
+console.log("---------------");
 console.log(`npm run dev`)
-console.log("\n");
+console.log("---------------");
 console.log("Create Your API");
     
