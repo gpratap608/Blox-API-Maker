@@ -1,6 +1,12 @@
-{
-  "name": "create-blox-api",
-  "version": "1.1.7",
+import fs from "fs/promises" 
+
+
+
+async function writeinPackage( repoName ) {
+  try {
+    const content = `{
+  "name": "@gpratap608/blox-api",
+  "version": "1.1.6",
   "description": "It is a complex and complete Backend Packege",
   "main": "index.js",
   "type": "module",
@@ -34,3 +40,11 @@
     "prettier": "^3.2.5"
   }
 }
+ `
+    await fs.writeFile(`${repoName}/.prettierignore`, content);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export default writeinPackage
