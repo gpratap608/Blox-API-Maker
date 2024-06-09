@@ -1,6 +1,6 @@
 {
   "name": "create-blox-api",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "It is a complex and complete Backend Packege",
   "main": "index.js",
   "type": "module",
