@@ -18,6 +18,8 @@ import writeinAPIerror from "./writeInAPIerror.js";
 import writeinapiResponse from "./writeInapiResponse.js";
 import writeinasyncHandler from "./writeinAsyncHandler.js";
 import writeinCloudinary from "./writeInCloudinary.js";
+import writeInAuhMiddleware from "./writeInAuthMiddleWare.js";
+import writeInUserController from "./writeInUserController.js";
 const runCommand =  command => {
     try {
         execSync(`${command}`,{studio:'inherit'})
@@ -31,9 +33,9 @@ const runCommand =  command => {
 const repoName = process.argv[2];
 const makeApp = `mkdir ${repoName}`
 const changeToApp = `cd ${repoName}`
+
 const createPublicFolder = `cd ${repoName} && mkdir public`
-const creategitignore = `cd ${repoName} && touch .gitignore` || `cd ${repoName} && New-Item -Path "./.gitignore" -ItemType "File"
-`
+const creategitignore = `cd ${repoName} && touch .gitignore`
 const createPrettierIgnore = `cd ${repoName} && touch .prettierignore` 
 const createPrettierrc = `cd ${repoName} && touch .prettierrc`
 const createpackage_lock = `cd ${repoName} && touch package-lock.json`
@@ -48,7 +50,7 @@ const createConstantJS = `cd ${repoName} && cd src && touch constants.js`
 const createIndex = `cd ${repoName} && cd src && touch index.js`
 
 const createControllers = `cd ${repoName} && cd src && mkdir controllers` 
-const createControllerJS = `cd ${repoName} && cd src && cd controllers && touch controller.js`
+const createUserControllerJS = `cd ${repoName} && cd src && cd controllers && touch user.controller.js`
 
 const createRoutes = `cd ${repoName} && cd src && mkdir routes` 
 const createUserRoutesJS = `cd ${repoName} && cd src && cd routes && touch user.routes.js`
@@ -58,6 +60,7 @@ const createDBindex = `cd ${repoName} && cd src && cd db && touch index.js`
 
 const createMiddlewareFolder = `cd ${repoName} && cd src && mkdir middlewares`
 const createMulterMiddleware = `cd ${repoName} && cd src && cd middlewares && touch multer.middleware.js`
+const createAuthMiddleWare = `cd ${repoName} && cd src && cd middlewares && touch auth.middleware.js`
 
 const createModels = `cd ${repoName} && cd src && mkdir models`
 const createUserModel = `cd ${repoName} && cd src && cd models && touch user.model.js`
@@ -73,7 +76,6 @@ const appCreated = runCommand(makeApp);
 if(!appCreated) process.exit(-1)
 const appPathChange = runCommand(changeToApp)
 if(!appPathChange) process.exit(-1)
-
 
 const publicCreated = runCommand(createPublicFolder);
 if(!publicCreated) process.exit(-1)
@@ -109,25 +111,37 @@ writeinconstant(repoName)
 const indexCreated = runCommand(createIndex)
 if(!indexCreated) process.exit(-1)
 writeinIndexJS(repoName)
+
+
 const controllerCreated = runCommand(createControllers)
 if(!controllerCreated) process.exit(-1)
-const controllerJSCreated = runCommand(createControllerJS)
-if(!controllerJSCreated) process.exit(-1)
+const userControllerJSCreated = runCommand(createUserControllerJS)
+if(!userControllerJSCreated) process.exit(-1)
+writeInUserController(repoName)
+
 const routesCreated = runCommand(createRoutes)
 if(!routesCreated) process.exit(-1)
 const userRoutesJSCreated = runCommand(createUserRoutesJS)
 if(!userRoutesJSCreated) process.exit(-1)
 writeinUserRouter(repoName)
+
+
 const DBfoldercreated = runCommand(createDBfolder)
 if(!DBfoldercreated) process.exit(-1)
 const DBIndexCreated = runCommand(createDBindex)
 if(!DBIndexCreated) process.exit(-1)
 writeinDBindex(repoName)
+
+
 const middleFolderCreated = runCommand(createMiddlewareFolder)
 if(!middleFolderCreated) process.exit(-1)
 const multerMiddlewareJSCreated = runCommand(createMulterMiddleware)
 if(!multerMiddlewareJSCreated) process.exit(-1)
 writeinMulterMiddleware(repoName)
+const authMiddlewareJSCreated = runCommand(createAuthMiddleWare)
+if(!authMiddlewareJSCreated) process.exit(-1)
+writeInAuhMiddleware(repoName)
+
 const modelsFolderCreated = runCommand(createModels)
 if(!modelsFolderCreated) process.exit(-1)
 const userModelCreated = runCommand(createUserModel)
@@ -147,6 +161,7 @@ writeinasyncHandler(repoName)
 const cloudinaryCreated = runCommand(createCloudinary)
 if(!cloudinaryCreated) process.exit(-1)
 writeinCloudinary(repoName)
+
 
 
 
