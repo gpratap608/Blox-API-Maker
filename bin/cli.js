@@ -165,15 +165,7 @@ writeinCloudinary(repoName)
 
 
 
-console.log("Blox API is a Product of:- ");
-console.log("**       **  **      ** ********* **       ** **********");
-console.log("**       **  **      ** **        **       **     **    ");
-console.log("**       **  **      ** **        **       **     **    ");
-console.log("**   *   **  **      ** ********  **       **     **    ");
-console.log("**  ***  **  **      ** **        **       **     **    ");
-console.log("** ** ** **  **      ** **        **       **     **    ");
-console.log("***     ***  **      ** **        **       **     **    ");
-console.log("**       **   ********  *********  ********      **    ");
+
 
 
 console.log("Congratulations! You are Ready to create Servers");
@@ -193,4 +185,15 @@ console.log("---------------");
 console.log(`npm run dev`)
 console.log("---------------");
 console.log("Create Your API");
-    
+
+console.log("Blox API is a Product of:- ");
+
+console.log("************  **       * ******    ************ ******   *       *    ***** ");
+console.log("     *        * *      * *     *         *      *     *  *       *   *     * ");
+console.log("     *        *  *     * *      *        *      *     *  *       *  *        ");
+console.log("     *        *   *    * *       *       *      ******   *       *   ****    ");
+console.log("     *        *    *   * *       *       *      *     *  *       *        *  ");
+console.log("     *        *     *  * *      *        *      *      * *       *         * ");
+console.log("     *        *      * * *     *         *      *     *   *     *   *     *  ");
+console.log("************  *       ** ******    ************ ******     *****     *****   ");
+console.log("INDIBUS Softwares Solutions Pvt Ltd");
